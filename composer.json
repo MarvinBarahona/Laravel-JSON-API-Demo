@@ -1,10 +1,11 @@
 {
-    "name": "laravel/laravel",
+    "name": "POC Laravel JSON API",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "",
     "keywords": [
         "framework",
-        "laravel"
+        "laravel",
+        "json:api"
     ],
     "license": "MIT",
     "require": {
