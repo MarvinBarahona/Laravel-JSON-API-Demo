@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "ddc9ddb6-dfcd-49ee-b291-9e14045398d1",
+		"name": "POC Laravel JSON API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Farmacias",
+			"item": [
+				{
+					"name": "Listado de farmacias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/farmacias",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"farmacias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener farmacia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/farmacias/:key",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"farmacias",
+								":key"
+							],
+							"variable": [
+								{
+									"key": "key",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener farmacia de sucursal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/sucursals/:id/farmacia",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"sucursals",
+								":id",
+								"farmacia"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Sucursales",
+			"item": [
+				{
+					"name": "Listado de sucursales por farmacia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/farmacias/:id/sucursals",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"farmacias",
+								":id",
+								"sucursals"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener sucursal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/sucursals/:id",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"sucursals",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listado de sucursales",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/sucursals",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"sucursals"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -37,6 +37,6 @@ class Sucursal extends Model
      */
     public function farmacia()
     {
-        return $this->belongsTo('Models\Farmacia', 'farmacia_id', 'farmacia_id');
+        return $this->belongsTo('App\Models\Farmacia', 'farmacia_id', 'farmacia_id');
     }
 }

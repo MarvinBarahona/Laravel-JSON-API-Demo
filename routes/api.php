@@ -18,5 +18,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+/*
+ * Agregando las rutas, un resource por cada API registrada.
+*/
 
+JsonApi::register('default')->routes(function ($api) {
+    $api->resource('farmacias')->relationships(function ($relations) {
+        $relations->hasMany('sucursals');
+    });
+    $api->resource('sucursals')->relationships(function ($relations) {
+        $relations->hasOne('farmacia');
+    });
+});
 
