@@ -6,7 +6,7 @@ Se uso como base un proyecto de Laravel 7, y la implementación de JSON:API [Lar
 
 ## Ejecutar el proyecto
 
-El proyecto contiene una [carpeta de scripts](app/scripts). El orden de ejecución para estos archivos es: 
+El proyecto contiene una [carpeta de scripts](documentation/scripts). El orden de ejecución para estos archivos es: 
 1) [DB Setup](documentation/scripts/POC%20Laravel%20-%20DB%20Setup.sql): Creación de una base de datos para el proyecto, y de un usuario de base de datos para el mismo. 
 2) [Tables](documentation/scripts/POC%20Laravel%20-%20Tables.sql): DDL que define las tablas utilizadas por el proyecto.
 3) [Seeds](documentation/scripts/POC%20Laravel%20-%20Seeds.sql): DML para insertar datos iniciales en las tablas creadas. 
