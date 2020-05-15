@@ -31,18 +31,18 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{poc-lavarel-server}}/farmacias/:key",
+							"raw": "{{poc-lavarel-server}}/farmacias/:idFarmacia",
 							"host": [
 								"{{poc-lavarel-server}}"
 							],
 							"path": [
 								"farmacias",
-								":key"
+								":idFarmacia"
 							],
 							"variable": [
 								{
-									"key": "key",
-									"value": "1"
+									"key": "idFarmacia",
+									"value": "4"
 								}
 							]
 						}
@@ -55,20 +55,90 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{poc-lavarel-server}}/sucursals/:id/farmacia",
+							"raw": "{{poc-lavarel-server}}/sucursals/:idSucursal/farmacia",
 							"host": [
 								"{{poc-lavarel-server}}"
 							],
 							"path": [
 								"sucursals",
-								":id",
+								":idSucursal",
 								"farmacia"
 							],
 							"variable": [
 								{
-									"key": "id",
-									"value": "2"
+									"key": "idSucursal",
+									"value": "1"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear farmacia",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": {\n\t\t\"type\": \"farmacias\",\n        \"attributes\": {\n            \"razon_social\": \"Farmacias San Nicolas S.A. de C.V.\",\n            \"nombre_comercial\": \"Farmacias San Nicolas\"\n        }\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{poc-lavarel-server}}/farmacias",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"farmacias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear farmacia con sucursales",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": {\n\t\t\"type\": \"farmacias\",\n        \"attributes\": {\n            \"razon_social\": \"Farmacias San Nicolas S.A. de C.V.\",\n            \"nombre_comercial\": \"Farmacias San Nicolas\"\n        }\n\t},\n\t\"relationships\": {\n        \"sucursals\": {\n            \"data\": [\n            \t{\n            \t\t\"nombre\": \"Sucursal San Salvador\",\n            \t\t\"direccion\": \"Avenida Amapolas, Colonia San Francisco, #13, San Salvador\"\n            \t},\n            \t{\n            \t\t\"nombre\": \"Sucursal San Vicente\",\n            \t\t\"direccion\": \"1ª Calle Poniente Hernan y Miranda, Contiguo a 5ª Brigada de Infantería, San Vi, San Vicente\"\n            \t}\n            ]\n        }\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{poc-lavarel-server}}/farmacias",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"farmacias"
 							]
 						}
 					},
@@ -86,18 +156,18 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{poc-lavarel-server}}/farmacias/:id/sucursals",
+							"raw": "{{poc-lavarel-server}}/farmacias/:idFarmacia/sucursals",
 							"host": [
 								"{{poc-lavarel-server}}"
 							],
 							"path": [
 								"farmacias",
-								":id",
+								":idFarmacia",
 								"sucursals"
 							],
 							"variable": [
 								{
-									"key": "id",
+									"key": "idFarmacia",
 									"value": "1"
 								}
 							]
@@ -111,17 +181,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{poc-lavarel-server}}/sucursals/:id",
+							"raw": "{{poc-lavarel-server}}/sucursals/:idSucursal",
 							"host": [
 								"{{poc-lavarel-server}}"
 							],
 							"path": [
 								"sucursals",
-								":id"
+								":idSucursal"
 							],
 							"variable": [
 								{
-									"key": "id",
+									"key": "idSucursal",
 									"value": "1"
 								}
 							]
@@ -134,6 +204,38 @@
 					"request": {
 						"method": "GET",
 						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/sucursals",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"sucursals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear sucursal",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"type\": \"sucursals\",\r\n        \"attributes\": {\r\n            \"nombre\": \"Sucursal San Salvador\",\r\n            \"direccion\": \"Calle Arce y 3a. Avenida Norte No. 106,, Edificio Abrego, Frente al Parque Hula Hula, San Salvador\",\r\n            \"farmacia_id\": \"2\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{poc-lavarel-server}}/sucursals",
 							"host": [

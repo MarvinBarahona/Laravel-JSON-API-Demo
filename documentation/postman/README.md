@@ -10,3 +10,10 @@ Para conocer más de Postman, ver:
 * [Uso general](https://learning.postman.com/docs/postman/sending-api-requests/requests/)
 * [Postman Collections](https://learning.postman.com/docs/postman/collections/intro-to-collections/)
 * [Postman Environments](https://learning.postman.com/docs/postman/variables-and-environments/variables/) 
+
+
+### Consideraciones. 
+
+* El estándar JSON:API utiliza la cabecera "Content-Type" seteada con "application/vnd.api+json", por lo que todas las peticiones POST y PUT tienen esa cabecera. 
+* En pruebas realizadas, solo fue posible crear una sucursal a partir de la creación de una farmacia, o enviando el parametro "farmacia_id" en la data de la sucursal.
+
