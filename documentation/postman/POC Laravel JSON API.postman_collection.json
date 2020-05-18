@@ -143,6 +143,72 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Actualizar farmacia",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": {\n\t\t\"type\": \"farmacias\",\n\t\t\"id\": \"3\",\n        \"attributes\": {\n            \"razon_social\": \"Farmacias San Nicolas S.A. de C.V. Editado\",\n            \"nombre_comercial\": \"Farmacias San Nicolas Editado\"\n        }\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{poc-lavarel-server}}/farmacias/:idFarmacia",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"farmacias",
+								":idFarmacia"
+							],
+							"variable": [
+								{
+									"key": "idFarmacia",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar farmacia",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/farmacias/:idFarmacia",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"farmacias",
+								":idFarmacia"
+							],
+							"variable": [
+								{
+									"key": "idFarmacia",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -150,6 +216,23 @@
 		{
 			"name": "Sucursales",
 			"item": [
+				{
+					"name": "Listado de sucursales",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/sucursals",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"sucursals"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "Listado de sucursales por farmacia",
 					"request": {
@@ -200,23 +283,6 @@
 					"response": []
 				},
 				{
-					"name": "Listado de sucursales",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{poc-lavarel-server}}/sucursals",
-							"host": [
-								"{{poc-lavarel-server}}"
-							],
-							"path": [
-								"sucursals"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Crear sucursal",
 					"request": {
 						"method": "POST",
@@ -243,6 +309,30 @@
 							],
 							"path": [
 								"sucursals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar sucursal",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/sucursals/:idSucursal",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"sucursals",
+								":idSucursal"
+							],
+							"variable": [
+								{
+									"key": "idSucursal",
+									"value": "5"
+								}
 							]
 						}
 					},

@@ -14,6 +14,7 @@ Para conocer más de Postman, ver:
 
 ### Consideraciones. 
 
-* El estándar JSON:API utiliza la cabecera "Content-Type" seteada con "application/vnd.api+json", por lo que todas las peticiones POST y PUT tienen esa cabecera. 
+* El estándar JSON:API utiliza la cabecera "Content-Type" seteada con "application/vnd.api+json", por lo que todas las peticiones POST y PATCH tienen esa cabecera. 
 * En pruebas realizadas, solo fue posible crear una sucursal a partir de la creación de una farmacia, o enviando el parametro "farmacia_id" en la data de la sucursal.
+* Si se intenta eliminar una farmacia con sucursales, habrá un error en la base de datos. Pendiente manejar apropiadamente ese error. 
 
