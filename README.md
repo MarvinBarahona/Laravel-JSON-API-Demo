@@ -11,7 +11,9 @@ El proyecto contiene una [carpeta de scripts](documentation/scripts). El orden d
 2) [Tables](documentation/scripts/POC%20Laravel%20-%20Tables.sql): DDL que define las tablas utilizadas por el proyecto.
 3) [Seeds](documentation/scripts/POC%20Laravel%20-%20Seeds.sql): DML para insertar datos iniciales en las tablas creadas. 
 
-Para inicial el proyecto, se debe clonar y configurar como cualquier proyecto Laravel: crear un archivo .env y configurar la base de datos, con la base de datos y el usuario creados con el primer script.
+Para inicial el proyecto, se debe clonar y configurar como cualquier proyecto Laravel:
+* Crear un archivo .env y configurar la base de datos, con la base de datos y el usuario creados con el primer script.
+* Instalar las dependencias del proyecto con `composer install`
 
 Para arrancar el proyecto, se ejecuta el comando:
 `php artisan serve`
