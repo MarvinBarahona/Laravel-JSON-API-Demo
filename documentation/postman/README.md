@@ -1,6 +1,6 @@
 # Probar con Postman
 
-Se creó [una colección](POC%20Laravel%20JSON%20API.postman_collection.json) y el [entorno de "Local"](Local.postman_environment.json), para probar este proyecto. 
+Se creó [una colección](POC%20Laravel%20JSON%20API.postman_collection.json) y el [entorno de "Local"](Local%20-%20POC%20Laravel%20JSON-API.postman_environment.json), para probar este proyecto. 
 
 Para exportar ambos archivos, se uso Postman v7.24.0.
 
