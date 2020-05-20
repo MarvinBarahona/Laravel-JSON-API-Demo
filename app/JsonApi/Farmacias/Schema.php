@@ -30,8 +30,8 @@ class Schema extends SchemaProvider
     public function getAttributes($resource)
     {
         return [
-            'razon-social' => $resource->razon_social,
-            'nombre-comercial' => $resource->nombre_comercial
+            'razon_social' => $resource->razon_social,
+            'nombre_comercial' => $resource->nombre_comercial
         ];
     }
 
