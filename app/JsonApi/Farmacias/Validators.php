@@ -17,6 +17,10 @@ class Validators extends AbstractValidators
         '*.string' => "Campo debe ser texto: :attribute"
     ];
 
+    protected $deleteMessages = [
+        'no_sucursals.accepted' => "No se puede eliminar una farmacia con sucursales"
+    ];
+
     protected $queryMessages = [
         '*.integer' => ":attribute debe ser un entero",
         'page.number.min' => ":attribute debe ser un número mayor o igual que :min",
@@ -65,6 +69,28 @@ class Validators extends AbstractValidators
         return [
             'razon_social' => 'required|string|min:5|max:200|unique:farmacia,razon_social',
             'nombre_comercial' => 'required|string|min:5|max:100'
+        ];
+    }
+
+    /**
+     * @param \App\Models\Farmacia $record
+     * @return array
+     */
+    protected function dataForDelete($record): array
+    {
+        return[
+            'no_sucursals' => $record->sucursals()->doesntExist(),
+        ];
+    }
+
+    /**
+     * @param \App\Models\Farmacia $record
+     * @return array|string[]|null
+     */
+    protected function deleteRules($record): ?array
+    {
+        return [
+            'no_sucursals' => 'accepted'
         ];
     }
 
