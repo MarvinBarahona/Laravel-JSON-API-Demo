@@ -11,16 +11,22 @@ class Validators extends AbstractValidators
      */
     protected $messages = [
         'razon_social.unique' => "Se envió una razón social que ya ha sido registrada",
-        '*.min' => "Atributo :attribute debe tener por lo menos :min caracteres",
-        '*.max' => "Atributo :attribute debe tener máximo :max caracteres",
+        '*.min' => "Campo :attribute debe tener por lo menos :min caracteres",
+        '*.max' => "Campo :attribute debe tener máximo :max caracteres",
         '*.required' => "Campo obligatorio: :attribute",
         '*.string' => "Campo debe ser texto: :attribute"
     ];
 
+    /**
+     * @var string[]
+     */
     protected $deleteMessages = [
         'no_sucursals.accepted' => "No se puede eliminar una farmacia con sucursales"
     ];
 
+    /**
+     * @var string[]
+     */
     protected $queryMessages = [
         '*.integer' => ":attribute debe ser un entero",
         'page.number.min' => ":attribute debe ser un número mayor o igual que :min",

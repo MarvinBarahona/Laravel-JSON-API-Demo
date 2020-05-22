@@ -8,6 +8,26 @@ class Validators extends AbstractValidators
 {
 
     /**
+     * @var string[]
+     */
+    protected $messages = [
+        'nombre.unique' => "Se envió un nombre que ya ha sido registrado",
+        '*.min' => "Campo :attribute debe tener por lo menos :min caracteres",
+        '*.max' => "Campo :attribute debe tener máximo :max caracteres",
+        '*.required' => "Campo obligatorio: :attribute",
+        '*.string' => "Campo debe ser texto: :attribute"
+    ];
+
+    /**
+     * @var string[]
+     */
+    protected $queryMessages = [
+        '*.integer' => ":attribute debe ser un entero",
+        'page.number.min' => ":attribute debe ser un número mayor o igual que :min",
+        'page.size.between' => ":attribute de ser un número entre :min y :max"
+    ];
+
+    /**
      * The include paths a client is allowed to request.
      *
      * @var string[]|null
@@ -22,6 +42,11 @@ class Validators extends AbstractValidators
      *      the allowed fields, an empty array for none allowed, or null to allow all fields.
      */
     protected $allowedSortParameters = [];
+
+    /**
+     * @var string[]
+     */
+    protected $allowedPagingParameters = ['number', 'size'];
 
     /**
      * The filters a client is allowed send.
@@ -41,7 +66,8 @@ class Validators extends AbstractValidators
     protected function rules($record = null): array
     {
         return [
-            //
+            'nombre' => 'required|string|min:5|max:100|unique:sucursal,nombre',
+            'direccion' => 'required|string|min:5|max:250',
         ];
     }
 
@@ -53,7 +79,8 @@ class Validators extends AbstractValidators
     protected function queryRules(): array
     {
         return [
-            //
+            'page.number' => 'integer|min:1',
+            'page.size' => 'integer|between:10,30',
         ];
     }
 

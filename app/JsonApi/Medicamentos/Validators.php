@@ -8,6 +8,28 @@ class Validators extends AbstractValidators
 {
 
     /**
+     * @var string[]
+     */
+    protected $messages = [
+        'nombre.unique' => "Se envió un nombre que ya ha sido registrado",
+        'nombre.min' => "Campo :attribute debe tener por lo menos :min caracteres",
+        'nombre.max' => "Campo :attribute debe tener máximo :max caracteres",
+        '*.required' => "Campo obligatorio: :attribute",
+        '*.string' => "Campo debe ser texto: :attribute",
+        '*.integer' => "Campo debe ser un entero: :attribute",
+        'cantidad.between' => "Campo :attribute debe ser entre :min y :max"
+    ];
+
+    /**
+     * @var string[]
+     */
+    protected $queryMessages = [
+        '*.integer' => ":attribute debe ser un entero",
+        'page.number.min' => ":attribute debe ser un número mayor o igual que :min",
+        'page.size.between' => ":attribute de ser un número entre :min y :max"
+    ];
+
+    /**
      * The include paths a client is allowed to request.
      *
      * @var string[]|null
@@ -22,6 +44,11 @@ class Validators extends AbstractValidators
      *      the allowed fields, an empty array for none allowed, or null to allow all fields.
      */
     protected $allowedSortParameters = [];
+
+    /**
+     * @var string[]
+     */
+    protected $allowedPagingParameters = ['number', 'size'];
 
     /**
      * The filters a client is allowed send.
@@ -40,8 +67,10 @@ class Validators extends AbstractValidators
      */
     protected function rules($record = null): array
     {
-        return [
-            //
+
+        $result = [
+            'nombre' => 'required|string|min:5|max:100|unique:medicamento,nombre',
+            'cantidad' => 'integer|between:0,10000'
         ];
     }
 
@@ -53,7 +82,8 @@ class Validators extends AbstractValidators
     protected function queryRules(): array
     {
         return [
-            //
+            'page.number' => 'integer|min:1',
+            'page.size' => 'integer|between:10,30',
         ];
     }
 
