@@ -26,6 +26,33 @@
 					"response": []
 				},
 				{
+					"name": "Listado de farmacias paginado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/farmacias?page[number]=1&page[size]=10",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"farmacias"
+							],
+							"query": [
+								{
+									"key": "page[number]",
+									"value": "1"
+								},
+								{
+									"key": "page[size]",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Obtener farmacia",
 					"request": {
 						"method": "GET",
@@ -223,7 +250,7 @@
 							"variable": [
 								{
 									"key": "idFarmacia",
-									"value": "3"
+									"value": "1"
 								}
 							]
 						}
@@ -291,7 +318,7 @@
 							"variable": [
 								{
 									"key": "idFarmacia",
-									"value": "3"
+									"value": "1"
 								}
 							]
 						}
@@ -371,7 +398,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{poc-lavarel-server}}/sucursals?page[number]=1&page[size]=2",
+							"raw": "{{poc-lavarel-server}}/sucursals?page[number]=1&page[size]=10",
 							"host": [
 								"{{poc-lavarel-server}}"
 							],
@@ -385,7 +412,7 @@
 								},
 								{
 									"key": "page[size]",
-									"value": "2"
+									"value": "10"
 								}
 							]
 						}
@@ -509,6 +536,48 @@
 					"response": []
 				},
 				{
+					"name": "Actualizar sucursal",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": {\n\t\t\"type\": \"sucursals\",\n\t\t\"id\": \"1\",\n        \"attributes\": {\n            \"nombre\": \"Sucursal San Salvador\",\n            \"direccion\": \"Calle Arce y 3a. Avenida Norte No. 106,, Edificio Abrego, Frente al Parque Hula Hula, San Salvador\"\n        }\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{poc-lavarel-server}}/sucursals/:idSucursal",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"sucursals",
+								":idSucursal"
+							],
+							"variable": [
+								{
+									"key": "idSucursal",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Eliminar sucursal",
 					"request": {
 						"method": "DELETE",
@@ -526,33 +595,6 @@
 								{
 									"key": "idSucursal",
 									"value": "5"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Listado de farmacias paginado",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{poc-lavarel-server}}/farmacias?page[number]=1&page[size]=2",
-							"host": [
-								"{{poc-lavarel-server}}"
-							],
-							"path": [
-								"farmacias"
-							],
-							"query": [
-								{
-									"key": "page[number]",
-									"value": "1"
-								},
-								{
-									"key": "page[size]",
-									"value": "2"
 								}
 							]
 						}
@@ -674,7 +716,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"data\": {\n\t\t\"type\": \"medicamentos\",\n        \"attributes\": {\n            \"nombre\": \"Jarabe para la tos\",\n            \"cantidad\": 2\n        }\n\t}\n}",
+							"raw": "{\n\t\"data\": {\n\t\t\"type\": \"medicamentos\",\n        \"attributes\": {\n            \"nombre\": \"Jarabe para la tos\"\n        }\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -709,7 +751,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"data\": {\n\t\t\"type\": \"medicamentos\",\n\t\t\"id\": \"1\",\n        \"attributes\": {\n            \"nombre\": \"Acetaminofen Editado\",\n            \"cantidad\": \"1\"\n        }\n\t}\n}",
+							"raw": "{\n\t\"data\": {\n\t\t\"type\": \"medicamentos\",\n\t\t\"id\": \"1\",\n        \"attributes\": {\n            \"cantidad\": \"9\"\n        }\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
