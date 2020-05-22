@@ -42,7 +42,7 @@
 							"variable": [
 								{
 									"key": "idFarmacia",
-									"value": "3"
+									"value": "2"
 								}
 							]
 						}
@@ -145,7 +145,7 @@
 					"response": []
 				},
 				{
-					"name": "Crear farmacia con sucursales y medicamentos",
+					"name": "Agregar medicamento a farmacia",
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {}
 					},
@@ -160,7 +160,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"data\": {\n\t\t\"type\": \"farmacias\",\n        \"attributes\": {\n            \"razon_social\": \"Farmacias San Nicolas S.A. de C.V.\",\n            \"nombre_comercial\": \"Farmacias San Nicolas\"\n        }\n\t},\n\t\"relationships\": {\n        \"sucursals\": {\n            \"data\": [\n            \t{\n            \t\t\"nombre\": \"Sucursal San Salvador\",\n            \t\t\"direccion\": \"Avenida Amapolas, Colonia San Francisco, #13, San Salvador\"\n            \t},\n            \t{\n            \t\t\"nombre\": \"Sucursal San Vicente\",\n            \t\t\"direccion\": \"1ª Calle Poniente Hernan y Miranda, Contiguo a 5ª Brigada de Infantería, San Vi, San Vicente\"\n            \t}\n            ]\n        },\n        \"medicamentos\": {\n        \t\"data\": [\n        \t\t{\"id\": 1},\n        \t\t{\"id\": 2 }\n        \t]\n        }\n\t}\n}",
+							"raw": "{\n\t\"data\": [\n\t\t{\n\t\t\t\"type\": \"medicamentos\",\n\t        \"id\": \"1\"\n\t\t},\n\t\t{\n\t\t\t\"type\": \"medicamentos\",\n\t        \"id\": \"4\"\n\t\t}\n\t]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -168,12 +168,21 @@
 							}
 						},
 						"url": {
-							"raw": "{{poc-lavarel-server}}/farmacias",
+							"raw": "{{poc-lavarel-server}}/farmacias/:idFarmacia/relationships/medicamentos",
 							"host": [
 								"{{poc-lavarel-server}}"
 							],
 							"path": [
-								"farmacias"
+								"farmacias",
+								":idFarmacia",
+								"relationships",
+								"medicamentos"
+							],
+							"variable": [
+								{
+									"key": "idFarmacia",
+									"value": "3"
+								}
 							]
 						}
 					},
@@ -222,6 +231,50 @@
 					"response": []
 				},
 				{
+					"name": "Setear medicamentos a farmacia",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": [\n\t\t{\n\t\t\t\"type\": \"medicamentos\",\n\t        \"id\": \"1\"\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{poc-lavarel-server}}/farmacias/:idFarmacia/relationships/medicamentos",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"farmacias",
+								":idFarmacia",
+								"relationships",
+								"medicamentos"
+							],
+							"variable": [
+								{
+									"key": "idFarmacia",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Eliminar farmacia",
 					"request": {
 						"method": "DELETE",
@@ -234,6 +287,50 @@
 							"path": [
 								"farmacias",
 								":idFarmacia"
+							],
+							"variable": [
+								{
+									"key": "idFarmacia",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar medicamento de farmacia",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": [\n\t\t{\n\t\t\t\"type\": \"medicamentos\",\n\t        \"id\": \"1\"\n\t\t}\n\t]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{poc-lavarel-server}}/farmacias/:idFarmacia/relationships/medicamentos",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"farmacias",
+								":idFarmacia",
+								"relationships",
+								"medicamentos"
 							],
 							"variable": [
 								{
