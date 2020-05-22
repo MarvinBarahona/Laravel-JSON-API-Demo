@@ -25,9 +25,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 JsonApi::register('default')->routes(function ($api) {
     $api->resource('farmacias')->relationships(function ($relations) {
         $relations->hasMany('sucursals');
+        $relations->hasMany('medicamentos');
     });
     $api->resource('sucursals')->relationships(function ($relations) {
         $relations->hasOne('farmacia');
+    });
+    $api->resource('medicamentos')->relationships(function ($relations) {
+
     });
 });
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\JsonApi\Farmacias;
+namespace App\JsonApi\Medicamentos;
 
 use CloudCreativity\LaravelJsonApi\Eloquent\AbstractAdapter;
 use CloudCreativity\LaravelJsonApi\Pagination\StandardStrategy;
@@ -31,7 +31,7 @@ class Adapter extends AbstractAdapter
      */
     public function __construct(StandardStrategy $paging)
     {
-        parent::__construct(new \App\Models\Farmacia(), $paging);
+        parent::__construct(new \App\Models\Medicamento(), $paging);
     }
 
     /**
@@ -42,27 +42,6 @@ class Adapter extends AbstractAdapter
     protected function filter($query, Collection $filters)
     {
         $this->filterWithScopes($query, $filters);
-    }
-
-    /**
-     * Retorna la relación existente con la entidad Sucursal.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    protected function sucursals()
-    {
-        return $this->hasMany();
-    }
-
-
-    /**
-     * Retorna la relación existente con Medicamentos
-     *
-     * @return \CloudCreativity\LaravelJsonApi\Eloquent\HasMany
-     */
-    protected function medicamentos()
-    {
-        return $this->hasMany();
     }
 
 

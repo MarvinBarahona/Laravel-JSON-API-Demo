@@ -1,6 +1,6 @@
 <?php
 
-namespace App\JsonApi\Farmacias;
+namespace App\JsonApi\Medicamentos;
 
 use Neomerx\JsonApi\Schema\SchemaProvider;
 
@@ -10,10 +10,10 @@ class Schema extends SchemaProvider
     /**
      * @var string
      */
-    protected $resourceType = 'farmacias';
+    protected $resourceType = 'medicamentos';
 
     /**
-     * @param \App\Models\Farmacia $resource
+     * @param \App\Models\Medicamento $resource
      *      the domain record being serialized.
      * @return string
      */
@@ -23,20 +23,19 @@ class Schema extends SchemaProvider
     }
 
     /**
-     * @param \App\Models\Farmacia $resource
+     * @param \App\Models\Medicamento $resource
      *      the domain record being serialized.
      * @return array
      */
     public function getAttributes($resource)
     {
         return [
-            'razon_social' => $resource->razon_social,
-            'nombre_comercial' => $resource->nombre_comercial
+            'nombre' => $resource->nombre
         ];
     }
 
     /**
-     * @param \App\Models\Farmacia $resource
+     * @param \App\Models\Sucursal $resource
      *      El objeto a ser serializado.
      * @param bool $isPrimary
      * @param array $includeRelationships
@@ -46,16 +45,6 @@ class Schema extends SchemaProvider
      */
     public function getRelationships($resource, $isPrimary, array $includeRelationships)
     {
-        return [
-            'sucursals' => [
-                self::SHOW_SELF => true,
-                self::SHOW_RELATED => true,
-            ],
-            'medicamentos' => [
-                self::SHOW_SELF => true,
-                self::SHOW_RELATED => true,
-            ]
-        ];
+        return [];
     }
-
 }

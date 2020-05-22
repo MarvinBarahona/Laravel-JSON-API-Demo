@@ -67,7 +67,8 @@ return [
     */
     'resources' => [
         'farmacias' => \App\Models\Farmacia::class,
-        'sucursals' => \App\Models\Sucursal::class
+        'sucursals' => \App\Models\Sucursal::class,
+        'medicamentos' => \App\Models\Medicamento::class
     ],
 
     /*

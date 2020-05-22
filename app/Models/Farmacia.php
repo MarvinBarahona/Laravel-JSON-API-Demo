@@ -38,4 +38,11 @@ class Farmacia extends Model
     {
         return $this->hasMany('App\Models\Sucursal', 'farmacia_id', 'farmacia_id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function medicamentos(){
+        return $this->belongsToMany('App\Models\Medicamento', 'farmacia_medicamento', 'farmacia_id', 'medicamento_id');
+    }
 }
