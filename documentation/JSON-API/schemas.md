@@ -12,9 +12,9 @@ Para el caso de este proyecto, se ejecutaron:
 
 `php artisan make:json-api:schema Sucursals`
 
-Con esto se crean archivos dentro de la carpeta [JsonApi](app/JsonApi), que se modificaron. 
+Con esto se crean archivos dentro de la carpeta [JsonApi](../../app/JsonApi), que se modificaron. 
 
-1) Al archivo [Farmacias/Schema.php](app/JsonApi/Farmacias/Schema.php) se le agregaron las siguientes líneas: 
+1) Al archivo [Farmacias/Schema.php](../../app/JsonApi/Farmacias/Schema.php) se le agregaron las siguientes líneas: 
 
     1) Para listar los campos a considerar en la generación de la API 'farmacias'.
     
@@ -40,7 +40,7 @@ Con esto se crean archivos dentro de la carpeta [JsonApi](app/JsonApi), que se m
         }
        ```
 
-1)  Al archivo [Sucursals/Schema.php](app/JsonApi/Sucursals/Schema.php) se le agregaron las siguientes líneas: 
+1)  Al archivo [Sucursals/Schema.php](../../app/JsonApi/Sucursals/Schema.php) se le agregaron las siguientes líneas: 
     1) Para listar los campos a considerar en la generación de la API 'sucursals'.
         ```php
         public function getAttributes($resource)

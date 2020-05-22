@@ -12,4 +12,4 @@ krlove:generate:model Farmacia --table-name=farmacia --output-path=Models --name
 krlove:generate:model Sucursal --table-name=sucursal --output-path=Models --namespace=App/Models
 `
 
-_Nota: Ya que, al crear la base de datos, no se uso la [conveción de Eloquent](https://laravel.com/docs/7.x/eloquent#eloquent-model-conventions), el resultado contiene el nombre correctamente semántico "sucursals" _
+_Nota: Ya que, al crear la base de datos, no se uso la [conveción de Eloquent](https://laravel.com/docs/7.x/eloquent#eloquent-model-conventions), el resultado contiene el nombre correctamente semántico "sucursals"_

@@ -13,7 +13,7 @@ Una vez instalada la dependencia, el primer paso es generar una JSON API con el 
 
 `php artisan make:json-api`
 
-El comando anterior creará el archivo [json-api-default.php](config/json-api-default.php), al que le agregarón las líneas:
+El comando anterior creará el archivo [json-api-default.php](../../config/json-api-default.php), al que le agregarón las líneas:
 
 * Para modificar el namespace por defecto de la capa de modelos (necesario para crear otros archivos, como Schemas y Adapters, correctamente)
 

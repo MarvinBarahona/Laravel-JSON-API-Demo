@@ -12,9 +12,9 @@ Para el caso de este proyecto, se ejecutaron:
 
 `php artisan make:json-api:adapter Sucursals`
 
-Con esto se crean archivos dentro de la carpeta [JsonApi](app/JsonApi), que se modificaron. 
+Con esto se crean archivos dentro de la carpeta [JsonApi](../../app/JsonApi), que se modificaron. 
 
-1) Al archivo [Farmacias/Adapter.php](app/JsonApi/Farmacias/Adapter.php) se le agregaron las siguientes líneas para especificar la relación existente con Sucursal:
+1) Al archivo [Farmacias/Adapter.php](../../app/JsonApi/Farmacias/Adapter.php) se le agregaron las siguientes líneas para especificar la relación existente con Sucursal:
 
     ```php
     protected function sucursals()
@@ -23,7 +23,7 @@ Con esto se crean archivos dentro de la carpeta [JsonApi](app/JsonApi), que se m
     }
     ```
 
-1) Al archivo [Sucursals/Adapter.php](app/JsonApi/Sucursals/Adapter.php) se le agregaron las siguientes líneas para especificar la relación existente con Farmacia:
+1) Al archivo [Sucursals/Adapter.php](../../app/JsonApi/Sucursals/Adapter.php) se le agregaron las siguientes líneas para especificar la relación existente con Farmacia:
 
     ```php
     protected function farmacia()

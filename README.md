@@ -29,7 +29,7 @@ _Nota: Laravel 7 trae, por defecto un par de migraciones. Se deben realizar para
 # Fe de Errata
 Ya que, al crear la base de datos, no se uso la [conveción de Eloquent](https://laravel.com/docs/7.x/eloquent#eloquent-model-conventions), el resultado contiene el nombre correctamente semántico "sucursals"
 
-TODO: 
+## TODO
 * Manejo adecuado de errores de la base de datos. 
 * Agregar paginación.
 * Agregar validación de campos.
