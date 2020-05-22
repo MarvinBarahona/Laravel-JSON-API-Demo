@@ -366,6 +366,33 @@
 					"response": []
 				},
 				{
+					"name": "Listado de sucursales paginado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/sucursals?page[number]=1&page[size]=2",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"sucursals"
+							],
+							"query": [
+								{
+									"key": "page[number]",
+									"value": "1"
+								},
+								{
+									"key": "page[size]",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Listado de sucursales por farmacia",
 					"request": {
 						"method": "GET",
@@ -379,6 +406,41 @@
 								"farmacias",
 								":idFarmacia",
 								"sucursals"
+							],
+							"variable": [
+								{
+									"key": "idFarmacia",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listado de sucursales por farmacia paginado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/farmacias/:idFarmacia/sucursals?page[number]=1&page[size]=2",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"farmacias",
+								":idFarmacia",
+								"sucursals"
+							],
+							"query": [
+								{
+									"key": "page[number]",
+									"value": "1"
+								},
+								{
+									"key": "page[size]",
+									"value": "2"
+								}
 							],
 							"variable": [
 								{
@@ -469,6 +531,33 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Listado de farmacias paginado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/farmacias?page[number]=1&page[size]=2",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"farmacias"
+							],
+							"query": [
+								{
+									"key": "page[number]",
+									"value": "1"
+								},
+								{
+									"key": "page[size]",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -488,6 +577,33 @@
 							],
 							"path": [
 								"medicamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listado de medicamentos paginado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/medicamentos?page[number]=1&page[size]=2",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"medicamentos"
+							],
+							"query": [
+								{
+									"key": "page[number]",
+									"value": "1"
+								},
+								{
+									"key": "page[size]",
+									"value": "2"
+								}
 							]
 						}
 					},
