@@ -76,7 +76,8 @@ Con esto se crean archivos dentro de la carpeta [JsonApi](../../app/JsonApi), qu
         public function getAttributes($resource)
             {
                 return [
-                    'nombre' => $resource->nombre
+                   'nombre' => $resource->nombre,
+                   'cantidad' => $resource->cantidad
                 ];
             }
         ```

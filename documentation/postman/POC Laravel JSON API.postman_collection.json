@@ -461,7 +461,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"data\": {\n\t\t\"type\": \"medicamentos\",\n        \"attributes\": {\n            \"nombre\": \"Jarabe para la tos\"\n        }\n\t}\n}",
+							"raw": "{\n\t\"data\": {\n\t\t\"type\": \"medicamentos\",\n        \"attributes\": {\n            \"nombre\": \"Jarabe para la tos\",\n            \"cantidad\": 2\n        }\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -496,7 +496,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"data\": {\n\t\t\"type\": \"medicamentos\",\n\t\t\"id\": \"1\",\n        \"attributes\": {\n            \"nombre\": \"Acetaminofen Editado\"\n        }\n\t}\n}",
+							"raw": "{\n\t\"data\": {\n\t\t\"type\": \"medicamentos\",\n\t\t\"id\": \"1\",\n        \"attributes\": {\n            \"nombre\": \"Acetaminofen Editado\",\n            \"cantidad\": \"1\"\n        }\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"

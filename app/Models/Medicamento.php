@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property int $medicamento_id
  * @property string $nombre
+ * @property int $cantidad
  * @property string $created_at
  * @property string $updated_at
  */
@@ -29,6 +30,6 @@ class Medicamento extends Model
     /**
      * @var array
      */
-    protected $fillable = ['nombre'];
+    protected $fillable = ['nombre', 'cantidad'];
 
 }
