@@ -73,7 +73,7 @@ class Validators extends AbstractValidators
     protected function rules($record = null): array
     {
         return [
-            'razon_social' => 'required|string|min:5|max:200|unique:farmacia,razon_social',
+            'razon_social' => 'required|string|min:5|max:200',
             'nombre_comercial' => 'required|string|min:5|max:100'
         ];
     }

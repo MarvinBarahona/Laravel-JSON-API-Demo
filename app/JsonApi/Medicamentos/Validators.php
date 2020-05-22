@@ -67,9 +67,8 @@ class Validators extends AbstractValidators
      */
     protected function rules($record = null): array
     {
-
-        $result = [
-            'nombre' => 'required|string|min:5|max:100|unique:medicamento,nombre',
+        return [
+            'nombre' => 'required|string|min:5|max:100',
             'cantidad' => 'integer|between:0,10000'
         ];
     }
