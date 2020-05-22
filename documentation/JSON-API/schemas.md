@@ -12,6 +12,8 @@ Para el caso de este proyecto, se ejecutaron:
 
 `php artisan make:json-api:schema Sucursals`
 
+`php artisan make:json-api:schema Medicamentos`
+
 Con esto se crean archivos dentro de la carpeta [JsonApi](../../app/JsonApi), que se modificaron. 
 
 1) Al archivo [Farmacias/Schema.php](../../app/JsonApi/Farmacias/Schema.php) se le agregaron las siguientes líneas: 
@@ -35,6 +37,10 @@ Con esto se crean archivos dentro de la carpeta [JsonApi](../../app/JsonApi), qu
                 'sucursals' => [
                     self::SHOW_SELF => true,
                     self::SHOW_RELATED => true,
+                ],
+                'medicamentos' => [
+                 self::SHOW_SELF => true,
+                 self::SHOW_RELATED => true,
                 ]
             ];
         }
@@ -50,7 +56,7 @@ Con esto se crean archivos dentro de la carpeta [JsonApi](../../app/JsonApi), qu
                     'direccion' => $resource->direccion
                 ];
             }
-            ```
+        ```
     1) Para declarar la relación con Farmacia (y las mostrarla en la API)
         ```php
         public function getRelationships($resource, $isPrimary, array $includeRelationships)
@@ -63,3 +69,21 @@ Con esto se crean archivos dentro de la carpeta [JsonApi](../../app/JsonApi), qu
                 ];
             }
        ```
+
+1)  Al archivo [Medicamentos/Schema.php](../../app/JsonApi/Medicamentos/Schema.php) se le agregaron las siguientes líneas: 
+    1) Para listar los campos a considerar en la generación de la API 'medicamentos'.
+        ```php
+        public function getAttributes($resource)
+            {
+                return [
+                    'nombre' => $resource->nombre
+                ];
+            }
+        ```
+    1) A esta API no se le agregan relaciones.
+        ```php
+        public function getRelationships($resource, $isPrimary, array $includeRelationships)
+            {
+                return [];
+            }
+        ```

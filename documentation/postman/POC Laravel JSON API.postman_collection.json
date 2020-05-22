@@ -42,7 +42,7 @@
 							"variable": [
 								{
 									"key": "idFarmacia",
-									"value": "4"
+									"value": "3"
 								}
 							]
 						}
@@ -126,6 +126,41 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"data\": {\n\t\t\"type\": \"farmacias\",\n        \"attributes\": {\n            \"razon_social\": \"Farmacias San Nicolas S.A. de C.V.\",\n            \"nombre_comercial\": \"Farmacias San Nicolas\"\n        }\n\t},\n\t\"relationships\": {\n        \"sucursals\": {\n            \"data\": [\n            \t{\n            \t\t\"nombre\": \"Sucursal San Salvador\",\n            \t\t\"direccion\": \"Avenida Amapolas, Colonia San Francisco, #13, San Salvador\"\n            \t},\n            \t{\n            \t\t\"nombre\": \"Sucursal San Vicente\",\n            \t\t\"direccion\": \"1ª Calle Poniente Hernan y Miranda, Contiguo a 5ª Brigada de Infantería, San Vi, San Vicente\"\n            \t}\n            ]\n        }\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{poc-lavarel-server}}/farmacias",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"farmacias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear farmacia con sucursales y medicamentos",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": {\n\t\t\"type\": \"farmacias\",\n        \"attributes\": {\n            \"razon_social\": \"Farmacias San Nicolas S.A. de C.V.\",\n            \"nombre_comercial\": \"Farmacias San Nicolas\"\n        }\n\t},\n\t\"relationships\": {\n        \"sucursals\": {\n            \"data\": [\n            \t{\n            \t\t\"nombre\": \"Sucursal San Salvador\",\n            \t\t\"direccion\": \"Avenida Amapolas, Colonia San Francisco, #13, San Salvador\"\n            \t},\n            \t{\n            \t\t\"nombre\": \"Sucursal San Vicente\",\n            \t\t\"direccion\": \"1ª Calle Poniente Hernan y Miranda, Contiguo a 5ª Brigada de Infantería, San Vi, San Vicente\"\n            \t}\n            ]\n        },\n        \"medicamentos\": {\n        \t\"data\": [\n        \t\t{\"id\": 1},\n        \t\t{\"id\": 2 }\n        \t]\n        }\n\t}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -331,6 +366,179 @@
 							"variable": [
 								{
 									"key": "idSucursal",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Medicamentos",
+			"item": [
+				{
+					"name": "Listado de medicamentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/medicamentos",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"medicamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listado de medicamentos por farmacia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/farmacias/:idFarmacia/medicamentos",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"farmacias",
+								":idFarmacia",
+								"medicamentos"
+							],
+							"variable": [
+								{
+									"key": "idFarmacia",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener medicamento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/medicamentos/:idMedicamento",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"medicamentos",
+								":idMedicamento"
+							],
+							"variable": [
+								{
+									"key": "idMedicamento",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear medicamento",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": {\n\t\t\"type\": \"medicamentos\",\n        \"attributes\": {\n            \"nombre\": \"Jarabe para la tos\"\n        }\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{poc-lavarel-server}}/medicamentos",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"medicamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar medicamento",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/vnd.api+json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"data\": {\n\t\t\"type\": \"medicamentos\",\n\t\t\"id\": \"1\",\n        \"attributes\": {\n            \"nombre\": \"Acetaminofen Editado\"\n        }\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{poc-lavarel-server}}/medicamentos/:idMedicamento",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"medicamentos",
+								":idMedicamento"
+							],
+							"variable": [
+								{
+									"key": "idMedicamento",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar  medicamento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{poc-lavarel-server}}/medicamentos/:idMedicamento",
+							"host": [
+								"{{poc-lavarel-server}}"
+							],
+							"path": [
+								"medicamentos",
+								":idMedicamento"
+							],
+							"variable": [
+								{
+									"key": "idMedicamento",
 									"value": "5"
 								}
 							]

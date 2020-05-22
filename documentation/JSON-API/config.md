@@ -25,8 +25,9 @@ El comando anterior creará el archivo [json-api-default.php](../../config/json-
 ```php
 'resources' => [
         'farmacias' => \App\Models\Farmacia::class,
-        'sucursals' => \App\Models\Sucursal::class
-    ],
+        'sucursals' => \App\Models\Sucursal::class,
+        'medicamentos' => \App\Models\Medicamento::class
+],
 ```
 
 Además, para evitar conflictos con el versionamiento de la API que provee el paquete, se debe eliminar el prefijo 'api' del archivo [RouteServiceProvider.php](app/Providers/RouteServiceProvider.php).

@@ -12,6 +12,8 @@ Para el caso de este proyecto, se ejecutaron:
 
 `php artisan make:json-api:adapter Sucursals`
 
+`php artisan make:json-api:adapter Medicamentos`
+
 Con esto se crean archivos dentro de la carpeta [JsonApi](../../app/JsonApi), que se modificaron. 
 
 1) Al archivo [Farmacias/Adapter.php](../../app/JsonApi/Farmacias/Adapter.php) se le agregaron las siguientes líneas para especificar la relación existente con Sucursal:
@@ -21,6 +23,12 @@ Con esto se crean archivos dentro de la carpeta [JsonApi](../../app/JsonApi), qu
     {
         return $this->hasMany();
     }
+   
+   
+   protected function medicamentos()
+   {
+       return $this->hasMany();
+   }
     ```
 
 1) Al archivo [Sucursals/Adapter.php](../../app/JsonApi/Sucursals/Adapter.php) se le agregaron las siguientes líneas para especificar la relación existente con Farmacia:
